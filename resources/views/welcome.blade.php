@@ -1,13 +1,27 @@
 @extends('layouts.app')
 
-@section('page-title', 'Home')
-
-@section('main-content')
 <h1>
-    Laravel Start 1
+    Laravel Model Controller
 </h1>
 
-<h2>
-    Ciao {{ $firstName }} {{ $lastName }}
-</h2>
-@endsection
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+        @foreach ($movies  as $movie )
+            <tr>
+                <th scope="row">{{ $movie['id'] }}</th>
+                <td>{{ $movie->title }}</td>
+                <td></td>
+            </tr>
+        @endforeach
+    
+    </tbody>
+  </table>
+
